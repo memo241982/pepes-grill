@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menú · Pepe's Grill</title>
+<meta name="theme-color" content="#0d0d0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Bebas+Neue&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fondo: #0d0d0d;
+    --tarjeta: #181818;
+    --borde: #2a2a2a;
+    --amarillo: #ffd21f;
+    --dorado: #f2c230;
+    --texto: #f3f3f3;
+    --suave: #a9a9a9;
+    --verde: #5fae3c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--fondo); color: var(--texto);
+    font-family: "Oswald", system-ui, sans-serif; font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    text-align: center; padding: 28px 16px 8px;
+    background: radial-gradient(ellipse at top, #222 0%, var(--fondo) 70%);
+  }
+  .logo { font-family: "Yellowtail", cursive; color: var(--amarillo); font-size: 52px; line-height: 1; margin: 0; }
+  .sub { font-family: "Bebas Neue", sans-serif; letter-spacing: .25em; color: var(--suave); margin-top: 6px; font-size: 18px; }
+  .buscar { display: block; width: 100%; max-width: 560px; margin: 16px auto 0; padding: 12px 14px;
+    border-radius: 12px; border: 1px solid var(--borde); background: var(--tarjeta); color: var(--texto);
+    font: inherit; }
+  .buscar:focus { outline: 2px solid var(--amarillo); border-color: transparent; }
+  nav {
+    position: sticky; top: 0; z-index: 5; background: rgba(13,13,13,.96);
+    backdrop-filter: blur(6px); border-bottom: 1px solid var(--borde);
+    display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px; scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    flex: none; text-decoration: none; color: var(--texto); font-family: "Bebas Neue", sans-serif;
+    font-size: 18px; letter-spacing: .06em; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--borde);
+  }
+  nav a.activa { background: var(--amarillo); color: #111; border-color: var(--amarillo); }
+  main { max-width: 960px; margin: 0 auto; padding: 8px 16px 60px; }
+  section { scroll-margin-top: 64px; }
+  h2 {
+    display: inline-block; font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 30px;
+    letter-spacing: .08em; color: #111; background: var(--amarillo); padding: 4px 22px 2px; margin: 28px 0 6px;
+    clip-path: polygon(2% 8%, 30% 0, 62% 6%, 99% 0, 97% 45%, 100% 92%, 68% 100%, 35% 94%, 0 100%, 3% 50%);
+  }
+  .nota-cat { color: var(--dorado); font-size: 14px; margin: 2px 0 10px; }
+  .lista { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 10px; }
+  @media (min-width: 640px) { .lista { grid-template-columns: 1fr 1fr; } }
+  .producto {
+    display: flex; gap: 12px; align-items: center; background: var(--tarjeta);
+    border: 1px solid var(--borde); border-radius: 14px; padding: 10px; min-height: 92px;
+  }
+  .producto.agotado { opacity: .45; }
+  .foto {
+    flex: none; width: 84px; height: 84px; border-radius: 10px; object-fit: cover; background: #222;
+  }
+  .foto.vacia {
+    display: grid; place-items: center; font-family: "Yellowtail", cursive; color: #555; font-size: 22px;
+    background: repeating-linear-gradient(135deg, #1f1f1f 0 10px, #232323 10px 20px);
+  }
+  .info { flex: 1; min-width: 0; }
+  .fila { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+  .nombre { font-weight: 500; font-size: 18px; text-transform: uppercase; letter-spacing: .02em; }
+  .precio { font-family: "Bebas Neue", sans-serif; color: var(--amarillo); font-size: 24px; white-space: nowrap; }
+  .desc { color: var(--suave); font-size: 14px; margin-top: 4px; line-height: 1.35; }
+  .etiqueta { display: inline-block; margin-top: 6px; font-size: 12px; color: #111; background: var(--dorado);
+    border-radius: 6px; padding: 1px 7px; }
+  .etiqueta.roja { background: #d9534f; color: #fff; }
+  .vacio { color: var(--suave); text-align: center; padding: 40px 0; display: none; }
+  footer { text-align: center; color: var(--suave); font-size: 14px; padding: 24px 16px 40px; border-top: 1px solid var(--borde); }
+  footer a { color: var(--amarillo); }
+  .boton-wa {
+    display: inline-block; margin-top: 10px; background: #25d366; color: #fff; text-decoration: none;
+    padding: 10px 18px; border-radius: 999px; font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="logo">Pepe's Grill</h1>
+  <div class="sub">Menú</div>
+  <input class="buscar" id="buscar" type="search" placeholder="Buscar en el menú…" aria-label="Buscar en el menú">
+</header>
+<nav id="nav" aria-label="Categorías"></nav>
+<main id="main"></main>
+<p class="vacio" id="vacio">No encontramos nada con ese nombre.</p>
+<footer id="pie"></footer>
+
+<script src="./datos/menu.js"></script>
+<script>
+(function () {
+  const M = window.MENU;
+  const mon = M.negocio.moneda || "Q";
+  const nav = document.getElementById("nav");
+  const main = document.getElementById("main");
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  for (const cat of M.categorias) {
+    const a = document.createElement("a");
+    a.href = "#" + cat.id; a.textContent = cat.nombre; a.dataset.cat = cat.id;
+    nav.appendChild(a);
+
+    const sec = document.createElement("section");
+    sec.id = cat.id;
+    let html = `<h2>${esc(cat.nombre)}</h2>`;
+    if (cat.incluyePapas) html += `<p class="nota-cat">Incluyen papas</p>`;
+    html += `<div class="lista">`;
+    for (const p of cat.productos) {
+      const agotado = p.disponible === false;
+      const foto = p.foto
+        ? `<img class="foto" src="./${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">`
+        : `<div class="foto vacia" aria-hidden="true">PG</div>`;
+      html += `<article class="producto${agotado ? " agotado" : ""}" data-busqueda="${esc((p.nombre + " " + (p.descripcion || "") + " " + cat.nombre).toLowerCase())}">
+        ${foto}
+        <div class="info">
+          <div class="fila"><span class="nombre">${esc(p.nombre)}</span><span class="precio">${mon}${p.precio}</span></div>
+          ${p.descripcion ? `<div class="desc">${esc(p.descripcion)}</div>` : ""}
+          ${agotado ? `<span class="etiqueta roja">Agotado</span>` : ""}
+        </div>
+      </article>`;
+    }
+    sec.innerHTML = html + `</div>`;
+    main.appendChild(sec);
+  }
+
+  // Pie con datos del negocio (solo lo que esté cargado)
+  const n = M.negocio;
+  let pie = "";
+  if (n.nota) pie += `<p>${esc(n.nota)}</p>`;
+  if (n.horario) pie += `<p><b style="color:var(--amarillo)">Horario</b><br>${n.horario.split("·").map(s => esc(s.trim())).join("<br>")}</p>`;
+  if (n.direccion) pie += `<p><b style="color:var(--amarillo)">Dirección</b><br><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(n.direccion)}" target="_blank" rel="noopener">${esc(n.direccion)}</a></p>`;
+  if (n.whatsapp) pie += `<a class="boton-wa" href="https://wa.me/${esc(n.whatsapp.replace(/\D/g, ""))}">Pedir por WhatsApp</a>`;
+  pie += `<p style="margin-top:18px">© ${new Date().getFullYear()} ${esc(n.nombre)}</p>`;
+  document.getElementById("pie").innerHTML = pie;
+
+  // Resaltar la categoría visible
+  const enlaces = [...nav.querySelectorAll("a")];
+  const obs = new IntersectionObserver(ents => {
+    for (const e of ents) if (e.isIntersecting) {
+      enlaces.forEach(a => a.classList.toggle("activa", a.dataset.cat === e.target.id));
+      const activo = nav.querySelector(".activa");
+      if (activo) activo.scrollIntoView({ inline: "center", block: "nearest" });
+    }
+  }, { rootMargin: "-70px 0px -70% 0px" });
+  document.querySelectorAll("section").forEach(s => obs.observe(s));
+
+  // Buscador
+  document.getElementById("buscar").addEventListener("input", e => {
+    const q = e.target.value.trim().toLowerCase();
+    let total = 0;
+    document.querySelectorAll("section").forEach(sec => {
+      let vis = 0;
+      sec.querySelectorAll(".producto").forEach(p => {
+        const ok = !q || p.dataset.busqueda.includes(q);
+        p.style.display = ok ? "" : "none"; if (ok) vis++;
+      });
+      sec.style.display = vis ? "" : "none"; total += vis;
+    });
+    document.getElementById("vacio").style.display = total ? "none" : "block";
+  });
+})();
+</script>
+</body>
+</html>
