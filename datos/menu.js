@@ -7,7 +7,8 @@ window.MENU = {
     "telefono": "",
     "direccion": "3a. calle 12-49, zona 6, Barrio Hacienda La Virgen, Salamá, Baja Verapaz",
     "horario": "Martes a jueves: 6:00 p.m. – 9:00 p.m. · Viernes y sábado: 6:00 p.m. – 10:00 p.m. · Domingo: 6:00 p.m. – 9:00 p.m. · Lunes: cerrado",
-    "nota": "Todos los panes al carbón y hamburguesas incluyen papas"
+    "nota": "Todos los panes al carbón y hamburguesas incluyen papas",
+    "urlPublica": "https://memo241982.github.io/pepes-grill/"
   },
   "categorias": [
     {
