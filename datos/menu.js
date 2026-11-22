@@ -276,7 +276,8 @@ window.MENU = {
         {
           "id": "cafe-caramelo-frio",
           "nombre": "Café caramelo frío",
-          "precio": 25
+          "precio": 25,
+          "disponible": false
         }
       ]
     },
