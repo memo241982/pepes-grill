@@ -270,7 +270,8 @@ window.MENU = {
         {
           "id": "batido-chocolate",
           "nombre": "Batido de chocolate",
-          "precio": 25
+          "precio": 25,
+          "disponible": false
         },
         {
           "id": "cafe-caramelo-frio",
