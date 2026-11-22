@@ -106,7 +106,12 @@
   const main = document.getElementById("main");
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-  for (const cat of M.categorias) {
+  // Lo «oculto» (de temporada, retirado) no se muestra; lo «agotado hoy» sí, marcado
+  const categorias = M.categorias
+    .filter(c => !c.oculta)
+    .map(c => ({ ...c, productos: c.productos.filter(p => !p.oculto) }))
+    .filter(c => c.productos.length);
+  for (const cat of categorias) {
     const a = document.createElement("a");
     a.href = "#" + cat.id; a.textContent = cat.nombre; a.dataset.cat = cat.id;
     nav.appendChild(a);

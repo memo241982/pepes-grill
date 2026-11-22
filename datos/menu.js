@@ -1,4 +1,3 @@
-// Datos del menú de Pepe's Grill. Se edita desde Administrar menú (http://localhost:4400/admin/).
 window.MENU = {
   "negocio": {
     "nombre": "Pepe's Grill",
@@ -266,18 +265,6 @@ window.MENU = {
           "id": "batido-fresa",
           "nombre": "Batido de fresa",
           "precio": 25
-        },
-        {
-          "id": "batido-chocolate",
-          "nombre": "Batido de chocolate",
-          "precio": 25,
-          "disponible": false
-        },
-        {
-          "id": "cafe-caramelo-frio",
-          "nombre": "Café caramelo frío",
-          "precio": 25,
-          "disponible": false
         }
       ]
     },
