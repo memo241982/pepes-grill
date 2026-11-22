@@ -81,11 +81,6 @@ window.MENU = {
           "id": "quesadillas",
           "nombre": "Quesadillas",
           "precio": 45
-        },
-        {
-          "id": "burrito",
-          "nombre": "Burrito",
-          "precio": 45
         }
       ]
     },
@@ -283,16 +278,6 @@ window.MENU = {
           "id": "cerveza-monte-carlo",
           "nombre": "Cerveza Monte Carlo",
           "precio": 18
-        },
-        {
-          "id": "cerveza-erdinger",
-          "nombre": "Cerveza Erdinger",
-          "precio": 50
-        },
-        {
-          "id": "cerveza-guinness",
-          "nombre": "Cerveza Guinness",
-          "precio": 60
         }
       ]
     },
@@ -311,11 +296,6 @@ window.MENU = {
           "id": "mineral-preparada",
           "nombre": "Mineral preparada",
           "precio": 20
-        },
-        {
-          "id": "pichel-michelada",
-          "nombre": "Pichel de michelada",
-          "precio": 75
         }
       ]
     },
