@@ -14,7 +14,7 @@ window.MENU = {
     {
       "id": "entradas",
       "nombre": "Entradas",
-      "pagina": 1,
+      "grupo": "comidas",
       "columna": 1,
       "productos": [
         {
@@ -37,13 +37,18 @@ window.MENU = {
     {
       "id": "carnes",
       "nombre": "Carnes",
-      "pagina": 1,
+      "grupo": "comidas",
       "columna": 1,
       "productos": [
         {
           "id": "churrasquito",
           "nombre": "Churrasquito",
-          "precio": 40
+          "precio": 35
+        },
+        {
+          "id": "churrasquito-doble",
+          "nombre": "Churrasquito doble",
+          "precio": 55
         },
         {
           "id": "puyazo",
@@ -51,14 +56,14 @@ window.MENU = {
           "precio": 60
         },
         {
-          "id": "lomito",
-          "nombre": "Lomito",
-          "precio": 60
+          "id": "puyazo-doble",
+          "nombre": "Puyazo doble",
+          "precio": 100
         },
         {
-          "id": "churrasquito-doble",
-          "nombre": "Churrasquito doble",
-          "precio": 55
+          "id": "chorizo-argentino-cuarto",
+          "nombre": "Chorizo argentino 1/4 libra",
+          "precio": 30
         },
         {
           "id": "chorizo-argentino",
@@ -70,7 +75,7 @@ window.MENU = {
     {
       "id": "tortilla",
       "nombre": "Tortilla",
-      "pagina": 1,
+      "grupo": "comidas",
       "columna": 2,
       "productos": [
         {
@@ -88,10 +93,15 @@ window.MENU = {
     {
       "id": "hamburguesas",
       "nombre": "Hamburguesas",
-      "pagina": 1,
+      "grupo": "comidas",
       "columna": 2,
       "incluyePapas": true,
       "productos": [
+        {
+          "id": "derretido",
+          "nombre": "Derretido",
+          "precio": 25
+        },
         {
           "id": "clasica",
           "nombre": "Clásica",
@@ -105,7 +115,7 @@ window.MENU = {
         {
           "id": "doble",
           "nombre": "Doble",
-          "precio": 52
+          "precio": 55
         },
         {
           "id": "doble-bacon",
@@ -115,7 +125,7 @@ window.MENU = {
         {
           "id": "triple-bacon",
           "nombre": "Triple Bacon",
-          "precio": 90
+          "precio": 95
         },
         {
           "id": "big-pepes",
@@ -131,25 +141,30 @@ window.MENU = {
           "id": "super-clasica",
           "nombre": "Súper Clásica",
           "precio": 60
+        },
+        {
+          "id": "tejana",
+          "nombre": "Tejana",
+          "precio": 65
         }
       ]
     },
     {
       "id": "panes-al-carbon",
       "nombre": "Panes al carbón",
-      "pagina": 1,
+      "grupo": "comidas",
       "columna": 3,
       "incluyePapas": true,
       "productos": [
         {
           "id": "chivito-uruguayo",
           "nombre": "Chivito uruguayo",
-          "precio": 70
+          "precio": 75
         },
         {
           "id": "pepes-cheese-steak",
           "nombre": "Pepe's Cheese Steak",
-          "precio": 50
+          "precio": 60
         },
         {
           "id": "choripan",
@@ -159,16 +174,16 @@ window.MENU = {
         {
           "id": "puyazo-steak",
           "nombre": "Puyazo Steak",
-          "precio": 60
-        },
-        {
-          "id": "lomito-steak",
-          "nombre": "Lomito Steak",
-          "precio": 60
+          "precio": 70
         },
         {
           "id": "super-steak",
           "nombre": "Súper Steak",
+          "precio": 65
+        },
+        {
+          "id": "melted-bacon",
+          "nombre": "Melted Bacon",
           "precio": 60
         }
       ]
@@ -176,18 +191,18 @@ window.MENU = {
     {
       "id": "extras",
       "nombre": "Extras",
-      "pagina": 1,
+      "grupo": "comidas",
       "columna": 3,
       "productos": [
         {
           "id": "tocino",
           "nombre": "Tocino",
-          "precio": 10
+          "precio": 15
         },
         {
           "id": "queso-mozzarella",
           "nombre": "Queso mozzarella",
-          "precio": 15
+          "precio": 20
         },
         {
           "id": "torta-de-carne",
@@ -209,7 +224,7 @@ window.MENU = {
     {
       "id": "bebidas",
       "nombre": "Bebidas",
-      "pagina": 2,
+      "grupo": "bebidas",
       "columna": 1,
       "productos": [
         {
@@ -267,7 +282,7 @@ window.MENU = {
     {
       "id": "cervezas",
       "nombre": "Cervezas",
-      "pagina": 2,
+      "grupo": "bebidas",
       "columna": 2,
       "productos": [
         {
@@ -295,7 +310,7 @@ window.MENU = {
     {
       "id": "bebidas-preparadas",
       "nombre": "Bebidas preparadas",
-      "pagina": 2,
+      "grupo": "bebidas",
       "columna": 2,
       "productos": [
         {
@@ -318,7 +333,7 @@ window.MENU = {
     {
       "id": "bebidas-calientes",
       "nombre": "Bebidas calientes",
-      "pagina": 2,
+      "grupo": "bebidas",
       "columna": 3,
       "productos": [
         {
@@ -330,16 +345,6 @@ window.MENU = {
           "id": "te",
           "nombre": "Té",
           "precio": 10
-        },
-        {
-          "id": "cappuccino",
-          "nombre": "Cappuccino",
-          "precio": 20
-        },
-        {
-          "id": "latte",
-          "nombre": "Latte",
-          "precio": 20
         }
       ]
     }
