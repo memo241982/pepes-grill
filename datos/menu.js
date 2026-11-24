@@ -141,6 +141,14 @@ window.MENU = {
           "nombre": "Tejana",
           "precio": 65
         }
+      ],
+      "extras": [
+        "tocino",
+        "queso-cheddar",
+        "queso-mozzarella",
+        "huevo",
+        "torta-de-carne",
+        "cambio-papas-aros"
       ]
     },
     {
@@ -180,6 +188,14 @@ window.MENU = {
           "nombre": "Melted Bacon",
           "precio": 60
         }
+      ],
+      "extras": [
+        "tocino",
+        "queso-cheddar",
+        "queso-mozzarella",
+        "huevo",
+        "torta-de-carne",
+        "cambio-papas-aros"
       ]
     },
     {
@@ -212,6 +228,11 @@ window.MENU = {
           "id": "queso-cheddar",
           "nombre": "Queso cheddar",
           "precio": 5
+        },
+        {
+          "id": "cambio-papas-aros",
+          "nombre": "Cambia tus papas por aros",
+          "precio": 10
         }
       ]
     },
